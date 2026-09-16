@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inicio | Sistema de Inventario</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link rel="stylesheet" href="css/estilos.css" />
+  </head>
+
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="index.html"
+          ><span class="brand-mark"><i class="bi bi-boxes"></i></span
+          ><span>Sistema de <span>Inventario</span></span></a
+        >
+        <nav class="nav-links" aria-label="Navegación principal">
+          <a class="active" href="index.html"
+            ><i class="bi bi-grid-1x2"></i> Inicio</a
+          ><a href="productos.html"><i class="bi bi-box-seam"></i> Productos</a
+          ><a href="registrar.html"
+            ><i class="bi bi-plus-circle"></i> Registrar</a
+          >
+        </nav>
+        <a class="profile" href="productos.html"
+          ><span class="avatar">AD</span
+          ><span class="profile-copy"
+            >Administrador<small>Panel principal</small></span
+          ><i class="bi bi-chevron-down"></i
+        ></a>
+      </header>
+      <main>
+        <section class="hero">
+          <div class="hero-grid"></div>
+          <div class="hero-copy">
+            <p class="eyebrow"><i class="bi bi-stars"></i> Panel de control</p>
+            <h1>Gestiona tu <span>inventario</span> con facilidad.</h1>
+            <p class="hero-text">
+              Registra, consulta, edita y elimina productos desde un solo lugar.
+            </p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="registrar.html"
+                ><i class="bi bi-plus-lg"></i> Registrar producto</a
+              ><a class="btn btn-ghost" href="productos.html"
+                >Ver productos <i class="bi bi-arrow-right"></i
+              ></a>
+            </div>
+          </div>
+          <div class="hero-orbit">
+            <span class="orb orb-one"></span><span class="orb orb-two"></span>
+            <div class="hero-card">
+              <i class="bi bi-box-seam"></i><small>Productos registrados</small
+              ><strong id="totalProductos">0</strong
+              ><span
+                ><i class="bi bi-arrow-up"></i> Inventario actualizado</span
+              >
+            </div>
+          </div>
+        </section>
+        <section class="dashboard-section">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Resumen general</p>
+              <h2>Estado del inventario</h2>
+            </div>
+            <p class="date">Datos en tiempo real</p>
+          </div>
+          <div class="metrics">
+            <article class="metric-card">
+              <span class="metric-icon purple">
+                <i class="bi bi-tags"> </i
+              ></span>
+              <div>
+                <small>Categorías</small><strong id="totalCategorias">0</strong
+                ><em>Clasificación actual</em>
+              </div>
+            </article>
+            <article class="metric-card">
+              <span class="metric-icon green"
+                ><i class="bi bi-check2-circle"></i
+              ></span>
+              <div>
+                <small>Unidades disponibles</small
+                ><strong id="unidadesDisponibles">0</strong
+                ><em>En existencia</em>
+              </div>
+            </article>
+            <article class="metric-card">
+              <span class="metric-icon orange">
+                <i class="bi bi-exclamation-triangle"></i>
+              </span>
+              <div>
+                <small>Productos agotados</small>
+                <strong id="stockBajo">0</strong>
+                <em>Sin unidades disponibles</em>
+              </div>
+            </article>
+            <article class="metric-card">
+              <span class="metric-icon blue"
+                ><i class="bi bi-cash-stack"></i
+              ></span>
+              <div>
+                <small>Valor del inventario</small
+                ><strong id="valorInventario">$0</strong
+                ><em>Valor total en stock</em>
+              </div>
+            </article>
+          </div>
+        </section>
+        <section class="content-grid">
+          <article class="panel">
+            <div class="panel-head">
+              <div>
+                <h2>Productos recientes</h2>
+                <p>Últimos registros del inventario.</p>
+              </div>
+              <a href="productos.html"
+                >Ver todos <i class="bi bi-arrow-right"></i
+              ></a>
+            </div>
+            <div id="recentProducts" class="recent-list"></div>
+          </article>
+          <article class="panel">
+            <div class="panel-head">
+              <div>
+                <h2>Categorías</h2>
+                <p>Distribución de productos.</p>
+              </div>
+            </div>
+            <div id="categoryList" class="category-list"></div>
+          </article>
+        </section>
+      </main>
+      <footer>
+        Sistema de Inventario · Gestión y control de productos <span>2026</span>
+      </footer>
+    </div>
+    <script src="js/app.js"></script>
+  </body>
+</html>

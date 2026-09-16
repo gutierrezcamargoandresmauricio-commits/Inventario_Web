@@ -1,0 +1,13 @@
+# Archivos de VS Code
+.vscode/
+
+# Archivos generados por Java / Maven
+backend/target/
+backend/.mvn/
+
+# Archivos temporales
+*.log
+*.tmp
+
+# Configuración local
+application-local.properties

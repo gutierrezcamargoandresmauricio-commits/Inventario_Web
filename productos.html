@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos | Sistema de Inventario</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="css/estilos.css">
+    <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+</head>
+
+<body>
+    <div class="app-shell">
+        <header class="topbar"><a class="brand" href="index.html">
+            <span class="brand-mark">
+                <i class="bi bi-boxes"></i>
+            </span><span>Sistema de <span>Inventario</span></span></a>
+            <nav class="nav-links" aria-label="Navegación principal">
+                <a href="index.html"><i class="bi bi-grid-1x2"></i>
+                    Inicio</a><a class="active" href="productos.html"><i class="bi bi-box-seam"></i> Productos</a><a
+                    href="registrar.html"><i class="bi bi-plus-circle"></i> Registrar</a></nav><a class="profile"
+                href="registrar.html"><span class="avatar">AD</span><span class="profile-copy">Administrador<small>Panel
+                        principal</small></span><i class="bi bi-chevron-down"></i></a>
+        </header>
+
+        <main class="page-main">
+            <section class="page-heading">
+                <div>
+                    <p class="eyebrow">Catálogo de inventario</p>
+                    <h1>Lista de productos</h1>
+                    <p>Consulta, busca y administra todos los registros disponibles.</p>
+                </div><a class="btn btn-primary" href="registrar.html"><i class="bi bi-plus-lg"></i> Agregar
+                    producto</a>
+            </section>
+            <section class="panel inventory-panel">
+                <div class="toolbar">
+                    <label class="search-box">
+                        <i class="bi bi-search">
+
+                        </i>
+                        <input id="searchInput" type="search" placeholder="Buscar por producto, código o categoría...">
+                    </label>
+                    <select id="categoryFilter" aria-label="Filtrar por categoría">
+                        <option value="">Todas las categorías</option>
+                    </select>
+                    <button id="btnExportarExcel" class="btn btn-success">
+                        <i class="bi bi-file-earmark-excel"> </i>
+                        Exportar a Excel
+                    </button>
+                    <span id="productCount" class="result-count"></span>
+                </div>
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Producto</th>
+                                <th>Código</th>
+                                <th>Categoría</th>
+                                <th>Precio</th>
+                                <th>Stock disponible</th>
+                                <th class="actions-cell">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tablaProductos"></tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+        <footer>Sistema de Inventario · Gestión y control de productos <span>2026</span></footer>
+    </div>
+    <script src="js/app.js"></script>
+
+</html>
