@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:8080/api/productos";
+const API_URL = "https://inventarioweb-production-cdf8.up.railway.app/api/productos";
 let productos = [];
 let productoEditando = null;
 const formatoMoneda = new Intl.NumberFormat("es-CO", { style: "currency", currency: "COP", maximumFractionDigits: 0 });
